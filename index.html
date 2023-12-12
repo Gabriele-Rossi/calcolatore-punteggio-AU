@@ -145,21 +145,25 @@
     <div class="tag-values-container">
         <!-- Qui verranno inseriti i tag e i valori -->
         <h4>Tag e Valori</h4>
-        <p>I tag vanno inseriti in maiuscolo, seguiti da una virgola e da uno spazio.</p>
+        <p class="text-capitalize text-warning"> <strong>I tag vanno inseriti in maiuscolo, seguiti da una virgola e da uno spazio.</strong> </p>
         <p> (in caso di errore i tag daranno zero punti, quindi controllare bene che siano scritti come da istruzioni) </p>
 
         <h4> LIsta dei TAGS:</h4>
-        <p><strong>IA (impostore vivo):</strong> 4</p>
-        <p><strong>ID (impostore morto):</strong> 2.5</p>
-        <p><strong>KILL (uccisione dell'impostore sul crewmate):</strong> 0.5</p>
-        <p><strong>CD (crewmate morto):</strong> 1</p>
-        <p><strong>CA (crewmate vivo):</strong> 1.5</p>
-        <p><strong>RC (call esatta):</strong> 2</p>
-        <p><strong>RCS (call perfetta):</strong> 3</p>
-        <p><strong>GA (guardian angel andato a segno):</strong> 1.5</p>
-        <p><strong>RCNT (call esatta ma non seguita):</strong> 0.5</p>
-        <p><strong>PENALTY (penalità):</strong> -3</p>
-        <p><strong>CAMPER (penalità riguardante il camperare a teste/vitals/cams):</strong> -2</p>
+        <div id="elementoDaMostrare" class="mobile-responsive">
+            <p><strong class="text-warning">IA</strong> (impostore vivo): 4</p>
+            <p><strong class="text-warning">ID</strong> (impostore morto): 2.5</p>
+            <p><strong class="text-warning">KILL</strong> (uccisione dell'impostore sul crewmate): 0.5</p>
+            <p><strong class="text-warning">CD</strong> (crewmate morto): 1</p>
+            <p><strong class="text-warning">CA</strong> (crewmate vivo): 1.5</p>
+            <p><strong class="text-warning">RC</strong> (call esatta): 2</p>
+            <p><strong class="text-warning">RCS</strong> (call perfetta): 3</p>
+            <p><strong class="text-warning">GA</strong> (guardian angel andato a segno): 1.5</p>
+            <p><strong class="text-warning">RCNT</strong> (call esatta ma non seguita): 0.5</p>
+            <p><strong class="text-warning">PENALTY</strong> (penalità): -3</p>
+            <p><strong class="text-warning">CAMPER</strong> (penalità riguardante il camperare a teste/vitals/cams): -2</p>
+        </div>
+        <button class="hidden btn btn-warning" id="ilTuoElemento">Mostra/Nascondi</button>
+        
     </div>
 
     <!-- Risultati -->

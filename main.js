@@ -100,3 +100,15 @@ function setBordoColore(formId, colore, padding) {
             formGroup.style.padding = '';
         });
     }
+
+    document.getElementById('ilTuoElemento').addEventListener('click', function() {
+        // Recupera l'elemento che vuoi mostrare/nascondere
+        var elementoDaMostrare = document.getElementById('elementoDaMostrare');
+    
+        // Aggiungi o rimuovi la classe 'hidden' per mostrare o nascondere l'elemento
+        if (elementoDaMostrare.classList.contains('hidden')) {
+            elementoDaMostrare.classList.remove('hidden');
+        } else {
+            elementoDaMostrare.classList.add('hidden');
+        }
+    });
