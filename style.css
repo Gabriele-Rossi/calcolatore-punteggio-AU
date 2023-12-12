@@ -50,3 +50,16 @@ body {
        
     }
 }
+
+/* Aggiungi stile per il div dei tag e valori */
+.tag-values-container {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* Media query per la responsività del div dei tag e valori */
+@media screen and (max-width: 767px) {
+    .tag-values-container {
+        font-size: 14px;
+    }
+}
