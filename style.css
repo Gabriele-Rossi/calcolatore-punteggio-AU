@@ -91,3 +91,19 @@ body {
     
     }
 }
+    
+
+
+
+
+/* Media query per la responsività del div dei tag e valori */
+@media screen and (max-width: 767px) {
+    .tag-values-container {
+        font-size: 14px;
+    }
+    .wrapper {
+       
+        margin-top: 80px !important;
+    
+    }
+}
