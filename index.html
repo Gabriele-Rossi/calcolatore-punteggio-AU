@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Punteggio Giocatori</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-light">
+        <h1>Punteggio Giocatori</h1>
+    
+        <!-- Aggiunto un wrapper per allineare i bottoni a destra -->
+        <div class="ml-auto mb-2">
+            <button class="btn btn-success calculate-btn" onclick="calcolaPunteggio()">Calcola Punteggio</button>
+            <button class="btn btn-warning ml-2 calculate-btn" onclick="pulisciCampi()">Pulisci Campi</button>
+        </div>
+    </nav>
+
+
+
+<div class="wrapper mt-5 pt-5">
+    <div class="container">
+        
+
+        <!-- Form per l'inserimento dei tag -->
+        <form id="tagForm">
+            <!-- Aggiungi campi per ogni giocatore -->
+            <div class="form-group" id="NonSonoLeoForm">
+                <label for="NonSonoLeo"><strong>NonSonoLeo:</strong></label>
+                <input type="text" class="form-control tag-input" id="NonSonoLeo" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('NonSonoLeoForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('NonSonoLeoForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('NonSonoLeoForm')">Set DEAD</button>
+            </div>
+
+            <div class="form-group" id="RebornForm">
+                <label for="Reborn"><strong>Reborn:</strong></label>
+                <input type="text" class="form-control tag-input" id="Reborn" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('RebornForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('RebornForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('RebornForm')">Set DEAD</button>
+            </div>
+
+            <div class="form-group" id="DEDEForm">
+                <label for="DEDE"><strong>DEDE:</strong></label>
+                <input type="text" class="form-control tag-input" id="DEDE" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('DEDEForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('DEDEForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('DEDEForm')">Set DEAD</button>
+            </div>
+
+            <!-- Aggiungi altri giocatori -->
+            
+            <!-- Player 4 -->
+            <div class="form-group" id="FostinoForm">
+                <label for="Fostino"><strong>Fostino:</strong></label>
+                <input type="text" class="form-control tag-input" id="Fostino" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('FostinoForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('FostinoForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('FostinoForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 5 -->
+            <div class="form-group" id="QifsharoptForm">
+                <label for="Qifsharopt"><strong>Qifsharopt:</strong></label>
+                <input type="text" class="form-control tag-input" id="Qifsharopt" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('QifsharoptForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('QifsharoptForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('QifsharoptForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 6 -->
+            <div class="form-group" id="BasileusForm">
+                <label for="Basileus"><strong>Basileus:</strong></label>
+                <input type="text" class="form-control tag-input" id="Basileus" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('BasileusForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('BasileusForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('BasileusForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 7 -->
+            <div class="form-group" id="MoldiForm">
+                <label for="Moldi"><strong>Moldi:</strong></label>
+                <input type="text" class="form-control tag-input" id="Moldi" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MoldiForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('MoldiForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MoldiForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 8 -->
+            <div class="form-group" id="KendyForm">
+                <label for="Kendy"><strong>Kendy:</strong></label>
+                <input type="text" class="form-control tag-input" id="Kendy" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('KendyForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('KendyForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('KendyForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 9 -->
+            <div class="form-group" id="TravisForm">
+                <label for="Travis"><strong>Travis:</strong></label>
+                <input type="text" class="form-control tag-input" id="Travis" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('TravisForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('TravisForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('TravisForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 10 -->
+            <div class="form-group" id="PrositaForm">
+                <label for="Prosita"><strong>Prosita:</strong></label>
+                <input type="text" class="form-control tag-input" id="Prosita" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('PrositaForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('PrositaForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('PrositaForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 11 -->
+            <div class="form-group" id="MrPeaklesForm">
+                <label for="MrPeakles"><strong>MrPeakles:</strong></label>
+                <input type="text" class="form-control tag-input" id="MrPeakles" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MrPeaklesForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('MrPeaklesForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MrPeaklesForm')">Set DEAD</button>
+            </div>
+
+            <!-- Player 12 -->
+            <div class="form-group" id="MaggiForm">
+                <label for="Maggi"><strong>Maggi:</strong></label>
+                <input type="text" class="form-control tag-input" id="Maggi" placeholder="Inserisci i tag separati da virgola">
+                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MaggiForm')">Set IMPOSTORE</button>
+                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('MaggiForm')">Set CREWMATE</button>
+                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MaggiForm')">Set DEAD</button>
+            </div>
+
+            
+        </form>
+    </div>
+
+    <!-- Risultati -->
+    <div class="container result-container">
+        <!-- Mostra i risultati qui -->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+
+
