@@ -8,6 +8,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding-top: 80px;
 
 }
 
@@ -31,17 +32,21 @@ body {
 
 .set-impostore-btn {
     margin-top: 10px;
+   
 }
 
 .set-crewmate-btn {
     margin-top: 10px;
+
 }
 
-@media screen  and (max-width: 768px) {  
-
-    .wrapper {
-        
-        padding-top: 80px;
+@media screen and (max-width: 420px) {
+    .set-crewmate-btn {
+        min-width: 138px;
     }
-    
+
+    .set-impostore-btn {
+        min-width: 138px;
+       
+    }
 }
