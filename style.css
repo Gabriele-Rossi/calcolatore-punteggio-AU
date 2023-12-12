@@ -8,7 +8,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding-top: 80px;
+   
 
 }
 
@@ -84,5 +84,10 @@ body {
 @media screen and (max-width: 767px) {
     .tag-values-container {
         font-size: 14px;
+    }
+    .wrapper {
+       
+        padding-top: 80px !important;
+    
     }
 }
