@@ -11,6 +11,12 @@ body {
    
 
 }
+.btn{
+    min-width: 85px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 8px;
+}
 
 .tag-input {
     margin-bottom: 10px;
@@ -36,6 +42,10 @@ body {
 }
 
 .set-crewmate-btn {
+    margin-top: 10px;
+
+}
+.set-tag-btn {
     margin-top: 10px;
 
 }

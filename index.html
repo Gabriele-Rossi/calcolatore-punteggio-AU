@@ -11,173 +11,326 @@
     </style>
 </head>
 <body>
-
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-light">
         <h1>Punteggio Giocatori</h1>
-    
+        
         <!-- Aggiunto un wrapper per allineare i bottoni a destra -->
         <div class="ml-auto mb-2">
             <button class="btn btn-success calculate-btn" onclick="calcolaPunteggio()">Calcola Punteggio</button>
             <button class="btn btn-warning ml-2 calculate-btn" onclick="pulisciCampi()">Pulisci Campi</button>
         </div>
     </nav>
-
-
-
-<div class="wrapper mt-5 pt-5">
-    <div class="container">
-        
-
-        <!-- Form per l'inserimento dei tag -->
-        <form id="tagForm">
-            <!-- Aggiungi campi per ogni giocatore -->
-            <div class="form-group" id="NonSonoLeoForm">
-                <label for="NonSonoLeo"><strong>NonSonoLeo:</strong></label>
-                <input type="text" class="form-control tag-input" id="NonSonoLeo" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('NonSonoLeoForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('NonSonoLeoForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('NonSonoLeoForm')">Set DEAD</button>
-            </div>
-
-            <div class="form-group" id="RebornForm">
-                <label for="Reborn"><strong>Reborn:</strong></label>
-                <input type="text" class="form-control tag-input" id="Reborn" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('RebornForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('RebornForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('RebornForm')">Set DEAD</button>
-            </div>
-
-            <div class="form-group" id="DEDEForm">
-                <label for="DEDE"><strong>DEDE:</strong></label>
-                <input type="text" class="form-control tag-input" id="DEDE" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('DEDEForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('DEDEForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('DEDEForm')">Set DEAD</button>
-            </div>
-
-            <!-- Aggiungi altri giocatori -->
-            
-            <!-- Player 4 -->
-            <div class="form-group" id="FostinoForm">
-                <label for="Fostino"><strong>Fostino:</strong></label>
-                <input type="text" class="form-control tag-input" id="Fostino" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('FostinoForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('FostinoForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('FostinoForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 5 -->
-            <div class="form-group" id="SamiForm">
-                <label for="Sami"><strong>Sami:</strong></label>
-                <input type="text" class="form-control tag-input" id="Sami" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('SamiForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('SamiForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('SamiForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 6 -->
-            <div class="form-group" id="SenapeForm">
-                <label for="Senape"><strong>Senape:</strong></label>
-                <input type="text" class="form-control tag-input" id="Senape" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('SenapeForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('SenapeForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('SenapeForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 7 -->
-            <div class="form-group" id="MoldiForm">
-                <label for="Moldi"><strong>Moldi:</strong></label>
-                <input type="text" class="form-control tag-input" id="Moldi" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MoldiForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('MoldiForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MoldiForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 8 -->
-            <div class="form-group" id="KendyForm">
-                <label for="Kendy"><strong>Kendy:</strong></label>
-                <input type="text" class="form-control tag-input" id="Kendy" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('KendyForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('KendyForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('KendyForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 9 -->
-            <div class="form-group" id="TravisForm">
-                <label for="Travis"><strong>Travis:</strong></label>
-                <input type="text" class="form-control tag-input" id="Travis" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('TravisForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('TravisForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('TravisForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 10 -->
-            <div class="form-group" id="PrositaForm">
-                <label for="Prosita"><strong>Prosita:</strong></label>
-                <input type="text" class="form-control tag-input" id="Prosita" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('PrositaForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('PrositaForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('PrositaForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 11 -->
-            <div class="form-group" id="MrPeaklesForm">
-                <label for="MrPeakles"><strong>MrPeakles:</strong></label>
-                <input type="text" class="form-control tag-input" id="MrPeakles" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MrPeaklesForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('MrPeaklesForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MrPeaklesForm')">Set DEAD</button>
-            </div>
-
-            <!-- Player 12 -->
-            <div class="form-group" id="TONYForm">
-                <label for="TONY"><strong>TONY:</strong></label>
-                <input type="text" class="form-control tag-input" id="TONY" placeholder="Inserisci i tag separati da virgola">
-                <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('TONYForm')">Set IMPOSTORE</button>
-                <button type="button" class="btn btn-primary set-crewmate-btn" onclick="setCrewmate('TONYForm')">Set CREWMATE</button>
-                <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('TONYForm')">Set DEAD</button>
-            </div>
-
-            
-        </form>
-    </div>
-
-    <div class="tag-values-container">
-        <!-- Qui verranno inseriti i tag e i valori -->
-        <h4>Tag e Valori</h4>
-        <p class="text-capitalize text-warning"> <strong>I tag vanno inseriti in maiuscolo, seguiti da una virgola e da uno spazio.</strong> </p>
-        <p> (in caso di errore i tag daranno zero punti, quindi controllare bene che siano scritti come da istruzioni) </p>
-
-        <h4> LIsta dei TAGS:</h4>
-        <button class="hidden btn btn-warning" id="ilTuoElemento">Mostra/Nascondi</button>
-
-        <div id="elementoDaMostrare" class="mobile-responsive">
-            <p><strong class="text-warning">IA</strong> (impostore vivo): 4</p>
-            <p><strong class="text-warning">ID</strong> (impostore morto): 2.5</p>
-            <p><strong class="text-warning">KILL</strong> (uccisione dell'impostore sul crewmate): 0.5</p>
-            <p><strong class="text-warning">CD</strong> (crewmate morto): 1</p>
-            <p><strong class="text-warning">CA</strong> (crewmate vivo): 1.5</p>
-            <p><strong class="text-warning">RC</strong> (call esatta): 2</p>
-            <p><strong class="text-warning">RCS</strong> (call perfetta): 3</p>
-            <p><strong class="text-warning">GA</strong> (guardian angel andato a segno): 1.5</p>
-            <p><strong class="text-warning">RCNT</strong> (call esatta ma non seguita): 0.5</p>
-            <p><strong class="text-warning">PENALTY</strong> (penalità): -3</p>
-            <p><strong class="text-warning">CAMPER</strong> (penalità riguardante il camperare a teste/vitals/cams): -2</p>
+    
+    
+    
+    <div class="wrapper mt-5 pt-5">
+        <div class="container">
+            <!-- Form per l'inserimento dei tag -->
+            <form id="tagForm">
+                <!-- Aggiungi campi per ogni giocatore -->
+                <div class="form-group" id="NonSonoLeoForm">
+                    <label for="NonSonoLeo"><strong>NonSonoLeo:</strong></label>
+                    <input type="text" class="form-control tag-input" id="NonSonoLeo" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('NonSonoLeoForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('NonSonoLeoForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('RebornForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    
+                </div>
+                
+                <div class="form-group" id="RebornForm">
+                    <label for="Reborn"><strong>Reborn:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Reborn" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('RebornForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('RebornForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('RebornForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <div class="form-group" id="DEDEForm">
+                    <label for="DEDE"><strong>DEDE:</strong></label>
+                    <input type="text" class="form-control tag-input" id="DEDE" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('DEDEForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('DEDEForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('DEDEForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                <!-- Aggiungi altri giocatori -->
+                
+                <!-- Player 4 -->
+                <div class="form-group" id="FostinoForm">
+                    <label for="Fostino"><strong>Fostino:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Fostino" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('FostinoForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('FostinoForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('FostinoForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 5 -->
+                <div class="form-group" id="SamiForm">
+                    <label for="Sami"><strong>Sami:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Sami" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('SamiForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('SamiForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('SamiForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 6 -->
+                <div class="form-group" id="SenapeForm">
+                    <label for="Senape"><strong>Senape:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Senape" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('SenapeForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('SenapeForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('SenapeForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 7 -->
+                <div class="form-group" id="MoldiForm">
+                    <label for="Moldi"><strong>Moldi:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Moldi" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MoldiForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('MoldiForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MoldiForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 8 -->
+                <div class="form-group" id="KendyForm">
+                    <label for="Kendy"><strong>Kendy:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Kendy" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('KendyForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('KendyForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('KendyForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 9 -->
+                <div class="form-group" id="TravisForm">
+                    <label for="Travis"><strong>Travis:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Travis" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('TravisForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('TravisForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('TravisForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 10 -->
+                <div class="form-group" id="PrositaForm">
+                    <label for="Prosita"><strong>Prosita:</strong></label>
+                    <input type="text" class="form-control tag-input" id="Prosita" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('PrositaForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('PrositaForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('PrositaForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 11 -->
+                <div class="form-group" id="MrPeaklesForm">
+                    <label for="MrPeakles"><strong>MrPeakles:</strong></label>
+                    <input type="text" class="form-control tag-input" id="MrPeakles" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('MrPeaklesForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('MrPeaklesForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('MrPeaklesForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+                <!-- Player 12 -->
+                <div class="form-group" id="TONYForm">
+                    <label for="TONY"><strong>TONY:</strong></label>
+                    <input type="text" class="form-control tag-input" id="TONY" placeholder="Inserisci i tag separati da virgola">
+                    <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('TONYForm')">Set IMPOSTORE</button>
+                    <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('TONYForm')">Set CREWMATE</button>
+                    <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('TONYForm')">Set DEAD</button>
+                    <br>
+                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <br>
+                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                </div>
+                
+            </form>
         </div>
         
+        <div class="tag-values-container">
+            <!-- Qui verranno inseriti i tag e i valori -->
+            <h4>Tag e Valori</h4>
+            <p class="text-capitalize text-warning"> <strong>I tag vanno inseriti in maiuscolo, seguiti da una virgola e da uno spazio.</strong> </p>
+            <p> (in caso di errore i tag daranno zero punti, quindi controllare bene che siano scritti come da istruzioni) </p>
+            
+            <h4> LIsta dei TAGS:</h4>
+            <button class="hidden btn btn-warning" id="ilTuoElemento">Mostra/Nascondi</button>
+            
+            <div id="elementoDaMostrare" class="mobile-responsive">
+                <p><strong class="text-warning">IA</strong> (impostore vivo): 4</p>
+                <p><strong class="text-warning">ID</strong> (impostore morto): 2.5</p>
+                <p><strong class="text-warning">KILL</strong> (uccisione dell'impostore sul crewmate): 0.5</p>
+                <p><strong class="text-warning">CD</strong> (crewmate morto): 1</p>
+                <p><strong class="text-warning">CA</strong> (crewmate vivo): 1.5</p>
+                <p><strong class="text-warning">RC</strong> (call esatta): 2</p>
+                <p><strong class="text-warning">RCS</strong> (call perfetta): 3</p>
+                <p><strong class="text-warning">GA</strong> (guardian angel andato a segno): 1.5</p>
+                <p><strong class="text-warning">RCNT</strong> (call esatta ma non seguita): 0.5</p>
+                <p><strong class="text-warning">PENALTY</strong> (penalità): -3</p>
+                <p><strong class="text-warning">CAMPER</strong> (penalità riguardante il camperare a teste/vitals/cams): -2</p>
+            </div>
+              <!-- Risultati -->
+        <div class="container result-container">
+            <!-- Mostra i risultati qui -->
+            
+        </div>
+            
+        </div>
         
+      
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
     </div>
-
-    <!-- Risultati -->
-    <div class="container result-container">
-        <!-- Mostra i risultati qui -->
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="main.js"></script>
-
 </body>
 </html>
