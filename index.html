@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
     <title>Punteggio Giocatori</title>
 
@@ -15,21 +16,73 @@
         <h4 style="margin-left: 10px;">version 2.1.0</h4>
         
         <!-- Aggiunto un wrapper per allineare i bottoni a destra -->
-        <div class="ml-auto mb-2">
-            <button class="btn btn-success calculate-btn" onclick="calcolaPunteggio()">Calcola Punteggio</button>
+        <div class="ms-auto mb-2 me-2">
             <button class="btn btn-warning ml-2 calculate-btn" onclick="pulisciCampi()">Pulisci Campi</button>
         </div>
     </nav>
     
+    <div class="accordion accordion-flush mt-5 " id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <h4>Tag e Valori</h4>
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <p class="text-capitalize text-warning"> <strong>I tag vanno inseriti in maiuscolo, seguiti da una virgola e da uno spazio.</strong> </p>
+                <p> (in caso di errore i tag daranno zero punti, quindi controllare bene che siano scritti come da istruzioni) </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h4> LIsta dei TAGS:</h4>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                
+                <button class="hidden btn btn-warning" id="ilTuoElemento">Mostra/Nascondi</button>
+                
+                <div id="elementoDaMostrare" class="mobile-responsive">
+                    <p><strong class="text-warning">IA</strong> (impostore vivo): 4</p>
+                    <p><strong class="text-warning">ID</strong> (impostore morto): 2.5</p>
+                    <p><strong class="text-warning">KILL</strong> (uccisione dell'impostore sul crewmate): 0.5</p>
+                    <p><strong class="text-warning">CD</strong> (crewmate morto): 1</p>
+                    <p><strong class="text-warning">CA</strong> (crewmate vivo): 1.5</p>
+                    <p><strong class="text-warning">RC</strong> (call esatta): 2</p>
+                    <p><strong class="text-warning">RCS</strong> (call perfetta): 3</p>
+                    <p><strong class="text-warning">GA</strong> (guardian angel andato a segno): 1.5</p>
+                    <p><strong class="text-warning">RCNT</strong> (call esatta ma non seguita): 0.5</p>
+                    <p><strong class="text-warning">PENALTY</strong> (penalità): -3</p>
+                    <p><strong class="text-warning">CAMPER</strong> (penalità riguardante il camperare a teste/vitals/cams): -2</p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <h4>Punteggio Finale</h4>  
+            </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <button class="btn btn-success calculate-btn" onclick="calcolaPunteggio()">Calcola Punteggio</button>
+                <div class="container result-container">
+            </div>
+          </div>
+        </div>
     
-    
-    <div class="wrapper mt-5 pt-5">
+    <div class="mt-5 pt-5">
         <div class="container">
             <!-- Form per l'inserimento dei tag -->
             <form id="tagForm">
                 <!-- Aggiungi campi per ogni giocatore -->
-             
-                <div class="form-group" id="Giocatore1Form">
+                <div class="row flexForm d-flex">
+
+                <div class="form-group col-6" id="Giocatore1Form">
                     <label for="Giocatore1"><strong>Giocatore1:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore1" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore1Form')">Set IMPOSTORE</button>
@@ -51,7 +104,7 @@
                 </div>
                 
                 
-                <div class="form-group" id="Giocatore2Form">
+                <div class="form-group col-6" id="Giocatore2Form">
                     <label for="Giocatore2"><strong>Giocatore2:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore2" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore2Form')">Set IMPOSTORE</button>
@@ -72,7 +125,7 @@
                     <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
-                <div class="form-group" id="Giocatore3Form">
+                <div class="form-group col-6" id="Giocatore3Form">
                     <label for="Giocatore3"><strong>Giocatore3:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore3" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore3Form')">Set IMPOSTORE</button>
@@ -95,7 +148,7 @@
                 <!-- Aggiungi altri giocatori -->
                 
                 <!-- Player 4 -->
-                <div class="form-group" id="Giocatore4Form">
+                <div class="form-group col-6" id="Giocatore4Form">
                     <label for="Giocatore4"><strong>Giocatore4:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore4" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore4Form')">Set IMPOSTORE</button>
@@ -117,7 +170,7 @@
                 </div>
                 
                 <!-- Player 5 -->
-                <div class="form-group" id="Giocatore5Form">
+                <div class="form-group col-6" id="Giocatore5Form">
                     <label for="Giocatore5"><strong>Giocatore5:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore5" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore5Form')">Set IMPOSTORE</button>
@@ -139,7 +192,7 @@
                 </div>
                 
                 <!-- Player 6 -->
-                <div class="form-group" id="Giocatore6Form">
+                <div class="form-group col-6" id="Giocatore6Form">
                     <label for="Giocatore6"><strong>Giocatore6:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore6" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore6Form')">Set IMPOSTORE</button>
@@ -161,7 +214,7 @@
                 </div>
                 
                 <!-- Player 7 -->
-                <div class="form-group" id="Giocatore7Form">
+                <div class="form-group col-6" id="Giocatore7Form">
                     <label for="Giocatore7"><strong>Giocatore7:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore7" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore7Form')">Set IMPOSTORE</button>
@@ -183,7 +236,7 @@
                 </div>
                 
                 <!-- Player 8 -->
-                <div class="form-group" id="Giocatore8Form">
+                <div class="form-group col-6" id="Giocatore8Form">
                     <label for="Giocatore8"><strong>Giocatore8:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore8" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore8Form')">Set IMPOSTORE</button>
@@ -205,7 +258,7 @@
                 </div>
                 
                 <!-- Player 9 -->
-                <div class="form-group" id="Giocatore9Form">
+                <div class="form-group col-6" id="Giocatore9Form">
                     <label for="Giocatore9"><strong>Giocatore9:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore9" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore9Form')">Set IMPOSTORE</button>
@@ -227,7 +280,7 @@
                 </div>
                 
                 <!-- Player 10 -->
-                <div class="form-group" id="Giocatore10Form">
+                <div class="form-group col-6" id="Giocatore10Form">
                     <label for="Giocatore10"><strong>Giocatore10:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore10" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore10Form')">Set IMPOSTORE</button>
@@ -249,7 +302,7 @@
                 </div>
                 
                 <!-- Player 11 -->
-                <div class="form-group" id="Giocatore11Form">
+                <div class="form-group col-6" id="Giocatore11Form">
                     <label for="Giocatore11"><strong>Giocatore11:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore11" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore11Form')">Set IMPOSTORE</button>
@@ -271,7 +324,7 @@
                 </div>
                 
                 <!-- Player 12 -->
-                <div class="form-group" id="Giocatore12Form">
+                <div class="form-group col-6" id="Giocatore12Form">
                     <label for="Giocatore12"><strong>Giocatore12:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore12" placeholder="Inserisci i tag separati da virgola">
                     <button type="button" class="btn btn-danger set-impostore-btn" onclick="setImpostore('Giocatore12Form')">Set IMPOSTORE</button>
@@ -279,46 +332,26 @@
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore12Form')">Set DEAD</button>
                     <br>
                     <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn setPlayerDead">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
                     <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary setPlayerDead set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary setPlayerDead set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
                     <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">CAMPER</button>
                 </div>
-                
+                </div>
+             
             </form>
         </div>
         
-        <div class="tag-values-container">
-            <!-- Qui verranno inseriti i tag e i valori -->
-            <h4>Tag e Valori</h4>
-            <p class="text-capitalize text-warning"> <strong>I tag vanno inseriti in maiuscolo, seguiti da una virgola e da uno spazio.</strong> </p>
-            <p> (in caso di errore i tag daranno zero punti, quindi controllare bene che siano scritti come da istruzioni) </p>
-            
-            <h4> LIsta dei TAGS:</h4>
-            <button class="hidden btn btn-warning" id="ilTuoElemento">Mostra/Nascondi</button>
-            
-            <div id="elementoDaMostrare" class="mobile-responsive">
-                <p><strong class="text-warning">IA</strong> (impostore vivo): 4</p>
-                <p><strong class="text-warning">ID</strong> (impostore morto): 2.5</p>
-                <p><strong class="text-warning">KILL</strong> (uccisione dell'impostore sul crewmate): 0.5</p>
-                <p><strong class="text-warning">CD</strong> (crewmate morto): 1</p>
-                <p><strong class="text-warning">CA</strong> (crewmate vivo): 1.5</p>
-                <p><strong class="text-warning">RC</strong> (call esatta): 2</p>
-                <p><strong class="text-warning">RCS</strong> (call perfetta): 3</p>
-                <p><strong class="text-warning">GA</strong> (guardian angel andato a segno): 1.5</p>
-                <p><strong class="text-warning">RCNT</strong> (call esatta ma non seguita): 0.5</p>
-                <p><strong class="text-warning">PENALTY</strong> (penalità): -3</p>
-                <p><strong class="text-warning">CAMPER</strong> (penalità riguardante il camperare a teste/vitals/cams): -2</p>
-            </div>
+     
               <!-- Risultati -->
-        <div class="container result-container">
+
             <!-- Mostra i risultati qui -->
             
         </div>
@@ -328,8 +361,8 @@
       
         
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
         <script src="main.js"></script>
     </div>
 </body>

@@ -65,17 +65,17 @@ function getPunteggioTag(tag) {
     return punteggiTag[tag] || 0;
 }
 
+
 // Funzione per gestire il click sui bottoni dei tag
 function handleTagButtonClick() {
     var tag = this.getAttribute('data-tag'); // Ottieni il tag associato al pulsante
     var tagsField = document.getElementById('tags'); // Ottieni il campo dei tag
-    var currentTags = tagsField.value.trim(); // Ottieni i tag attualmente nel campo del modulo
 
-    if (currentTags !== '') {
-        currentTags += ', '; // Aggiungi una virgola solo se il campo non è vuoto
-    }
-    currentTags += tag; // Aggiungi il nuovo tag
-    tagsField.value = currentTags; // Imposta i nuovi tag nel campo del modulo
+    // if (currentTags !== '') {
+    //     currentTags += ', '; // Aggiungi una virgola solo se il campo non è vuoto
+    // }
+    // currentTags += tag; // Aggiungi il nuovo tag
+    // tagsField.value = currentTags; // Imposta i nuovi tag nel campo del modulo
 }
 
 // Aggiungi un gestore di eventi a tutti i bottoni dei tag
