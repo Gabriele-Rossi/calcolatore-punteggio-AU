@@ -17,6 +17,13 @@ body {
     border: 2px solid white;
     border-radius: 8px;
 }
+.btn-info{
+    background-color: #00b8f0;
+}
+.btn-warning{
+    background-color: #e4761c;
+    color: white;
+}
 
 .tag-input {
     margin-bottom: 10px;
@@ -37,19 +44,25 @@ body {
 }
 
 .set-impostore-btn {
-    margin-top: 10px;
-   
+    margin-top: 10px; 
 }
 
 .set-crewmate-btn {
     margin-top: 10px;
 
 }
+
 .set-tag-btn {
     margin-top: 10px;
-
 }
+
 .hidden {
+    display: none;
+}
+
+.setImpostorsHidden,
+.setCrewmateHidden,
+.setDeadHidden {
     display: none;
 }
 
@@ -124,3 +137,4 @@ body {
         flex-direction: column-reverse;
     }
 }
+

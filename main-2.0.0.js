@@ -127,6 +127,10 @@ function pulisciCampi() {
 
     // Resetta anche i bordi colorati dei form
     resetBordiColorati();
+    
+    // Resetta i risultati
+    const resultContainer = document.querySelector('.result-container');
+    resultContainer.innerHTML = ''; // Rimuovi tutti i contenuti dal contenitore dei risultati
 }
 
 function setBordoColore(formId, colore, padding) {
@@ -146,5 +150,3 @@ function resetBordiColorati() {
         formGroup.style.padding = '';
     });
 }
-
-

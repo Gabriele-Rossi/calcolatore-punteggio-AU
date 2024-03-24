@@ -6,14 +6,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Punteggio Giocatori</title>
-    <style>
-        
-    </style>
+
 </head>
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-light">
-        <h1>Punteggio Giocatori</h1>
+        <h1>Among Us Tournament Calculator</h1>
+        <h4 style="margin-left: 10px;">version 2.1.0</h4>
         
         <!-- Aggiunto un wrapper per allineare i bottoni a destra -->
         <div class="ml-auto mb-2">
@@ -29,6 +28,7 @@
             <!-- Form per l'inserimento dei tag -->
             <form id="tagForm">
                 <!-- Aggiungi campi per ogni giocatore -->
+             
                 <div class="form-group" id="Giocatore1Form">
                     <label for="Giocatore1"><strong>Giocatore1:</strong></label>
                     <input type="text" class="form-control tag-input" id="Giocatore1" placeholder="Inserisci i tag separati da virgola">
@@ -36,19 +36,20 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore1Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore1Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
+                
                 
                 <div class="form-group" id="Giocatore2Form">
                     <label for="Giocatore2"><strong>Giocatore2:</strong></label>
@@ -57,18 +58,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore2Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore2Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <div class="form-group" id="Giocatore3Form">
@@ -78,18 +79,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore3Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore3Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 <!-- Aggiungi altri giocatori -->
                 
@@ -101,18 +102,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore4Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore4Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 5 -->
@@ -123,18 +124,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore5Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore5Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 6 -->
@@ -145,18 +146,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore6Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore6Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 7 -->
@@ -167,18 +168,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore7Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore7Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 8 -->
@@ -189,18 +190,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore8Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore8Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 9 -->
@@ -211,18 +212,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore9Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore9Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 10 -->
@@ -233,18 +234,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore10Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore10Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 11 -->
@@ -255,18 +256,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore11Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore11Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setDeadHidden">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">CD</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">CA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RC</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCS</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setDeadHidden">GA</button>
+                    <button type="button" class="btn btn-primary set-tag-btn setCrewmateHidden">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn setCrewmateHidden">CAMPER</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
                 </div>
                 
                 <!-- Player 12 -->
@@ -277,18 +278,18 @@
                     <button type="button" class="btn btn-info set-crewmate-btn" onclick="setCrewmate('Giocatore12Form')">Set CREWMATE</button>
                     <button type="button" class="btn btn-secondary set-crewmate-btn" onclick="setDead('Giocatore12Form')">Set DEAD</button>
                     <br>
-                    <button type="button" class="btn btn-warning set-tag-btn">IA</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">ID</button>
-                    <button type="button" class="btn btn-warning set-tag-btn">KILL</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">IA</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setPlayerDead">ID</button>
+                    <button type="button" class="btn btn-warning set-tag-btn setImpostorsHidden">KILL</button>
                     <br>
-                    <button type="button" class="btn btn-primary set-tag-btn">CD</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RC</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCS</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">GA</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">RCNT</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">PENALITY</button>
-                    <button type="button" class="btn btn-primary set-tag-btn">CAMPER</button>
+                    <button type="button" class="btn btn-primary setPlayerDead set-tag-btn">CD</button>
+                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">CA</button>
+                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">RC</button>
+                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">RCS</button>
+                    <button type="button" class="btn btn-primary setPlayerDead set-tag-btn">GA</button>
+                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">RCNT</button>
+                    <button type="button" class="btn btn-dark set-tag-btn">PENALITY</button>
+                    <button type="button" class="btn btn-primary setCrewmateHidden set-tag-btn">CAMPER</button>
                 </div>
                 
             </form>
