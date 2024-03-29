@@ -25,20 +25,30 @@ function calcolaPunteggio() {
     tagInputs.forEach(input => {
         const playerName = input.id; // Recupera il nome del giocatore
         const tags = input.value.split(',').map(tag => tag.trim()); // Recupera i tag e rimuove gli spazi
-
+    
         // Inizializza il punteggio del giocatore se non esiste
         punteggiGiocatori[playerName] = punteggiGiocatori[playerName] || 0;
-
+    
+        // Debug: controlla i punteggi intermedi
+        console.log('Tags:', tags);
+        console.log('Punteggio iniziale:', punteggiGiocatori[playerName]);
+    
         // Somma i punteggi per ciascun tag
         tags.forEach(tag => {
-            punteggiGiocatori[playerName] += getPunteggioTag(tag);
+            const punteggioTag = getPunteggioTag(tag);
+            punteggiGiocatori[playerName] += punteggioTag;
+    
+            // Debug: controlla il punteggio di ciascun tag
+            console.log('Tag:', tag);
+            console.log('Punteggio:', punteggioTag);
+            console.log('Punteggio parziale:', punteggiGiocatori[playerName]);
         });
     });
 
     // Visualizza i risultati
     const resultContainer = document.querySelector('.result-container');
     resultContainer.innerHTML = '<h4>Risultato Calcolo Punteggio</h4>';
-    
+
     // Mostra i punteggi per ogni giocatore
     Object.entries(punteggiGiocatori).forEach(([player, score]) => {
         resultContainer.innerHTML += `<p>${player}: ${score}</p>`;
@@ -46,6 +56,7 @@ function calcolaPunteggio() {
 }
 
 function getPunteggioTag(tag) {
+    console.log('Tag:', tag); // Aggiunta del log per controllare il valore del tag
     // Mappa dei tag con i relativi punteggi
     const punteggiTag = {
         'IA': 4,
@@ -57,12 +68,12 @@ function getPunteggioTag(tag) {
         'RCS': 3,
         'GA': 1.5,
         'RCNT': 0.5,
-        'PENALTY': -3,
+        'PENALITY': -3,
         'CAMPER': -2,
     };
 
     // Restituisci il punteggio corrispondente al tag o 0 se il tag non è valido
-    return punteggiTag[tag] || 0;
+    return punteggiTag[tag.toUpperCase()] || 0; // Converto il tag in maiuscolo per essere sicuro che il confronto sia case-insensitive
 }
 
 

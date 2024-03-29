@@ -31,14 +31,19 @@ function calcolaPunteggio() {
 
         // Somma i punteggi per ciascun tag
         tags.forEach(tag => {
-            punteggiGiocatori[playerName] += getPunteggioTag(tag);
+            console.log('Tag:', tag); // Debug: stampa il tag corrente
+            const punteggioTag = getPunteggioTag(tag); // Ottieni il punteggio del tag corrente
+            console.log('Punteggio:', punteggioTag); // Debug: stampa il punteggio associato al tag corrente
+            if (punteggioTag !== undefined) {
+                punteggiGiocatori[playerName] += punteggioTag; // Aggiungi il punteggio solo se il tag è valido
+            }
         });
     });
 
     // Visualizza i risultati
     const resultContainer = document.querySelector('.result-container');
     resultContainer.innerHTML = '<h4>Risultato Calcolo Punteggio</h4>';
-    
+
     // Mostra i punteggi per ogni giocatore
     Object.entries(punteggiGiocatori).forEach(([player, score]) => {
         resultContainer.innerHTML += `<p>${player}: ${score}</p>`;
@@ -65,17 +70,17 @@ function getPunteggioTag(tag) {
     return punteggiTag[tag] || 0;
 }
 
+
 // Funzione per gestire il click sui bottoni dei tag
 function handleTagButtonClick() {
     var tag = this.getAttribute('data-tag'); // Ottieni il tag associato al pulsante
     var tagsField = document.getElementById('tags'); // Ottieni il campo dei tag
-    var currentTags = tagsField.value.trim(); // Ottieni i tag attualmente nel campo del modulo
 
-    if (currentTags !== '') {
-        currentTags += ', '; // Aggiungi una virgola solo se il campo non è vuoto
-    }
-    currentTags += tag; // Aggiungi il nuovo tag
-    tagsField.value = currentTags; // Imposta i nuovi tag nel campo del modulo
+    // if (currentTags !== '') {
+    //     currentTags += ', '; // Aggiungi una virgola solo se il campo non è vuoto
+    // }
+    // currentTags += tag; // Aggiungi il nuovo tag
+    // tagsField.value = currentTags; // Imposta i nuovi tag nel campo del modulo
 }
 
 // Aggiungi un gestore di eventi a tutti i bottoni dei tag
@@ -103,50 +108,73 @@ function setBordoColore(formId, colore, padding) {
 }
 
 function setImpostore(formId) {
+    // Funzionalità originale di setImpostore
     setBordoColore(formId, 'red', 10);
+
+    // Mostra i bottoni con classe 'setImpostorsHidden' relativi al giocatore specificato
+    const setImpostorsHiddenButtons = document.querySelectorAll(`#${formId} .setImpostorsHidden`);
+    setImpostorsHiddenButtons.forEach(button => {
+        button.style.display = 'inline-block';
+    });
+
+    // Nascondi i bottoni con classe 'setCrewmateHidden' e 'setDeadHidden' relativi al giocatore specificato
+    const setCrewmateHiddenButtons = document.querySelectorAll(`#${formId} .setCrewmateHidden`);
+    setCrewmateHiddenButtons.forEach(button => {
+        button.style.display = 'none';
+    });
+
+    const setDeadHiddenButtons = document.querySelectorAll(`#${formId} .setDeadHidden`);
+    setDeadHiddenButtons.forEach(button => {
+        button.style.display = 'none';
+    });
 }
 
 function setCrewmate(formId) {
+    // Funzionalità originale di setCrewmate
     const crewmateButton = document.querySelector('.set-crewmate-btn');
     const coloreBottone = getComputedStyle(crewmateButton).backgroundColor;
-    setBordoColore(formId, coloreBottone, 10);
+    setBordoColore(formId, "#00b8f0", 10);
+
+    // Mostra i bottoni con classe 'setCrewmateHidden' relativi al giocatore specificato
+    const setCrewmateHiddenButtons = document.querySelectorAll(`#${formId} .setCrewmateHidden`);
+    setCrewmateHiddenButtons.forEach(button => {
+        button.style.display = 'inline-block';
+    });
+
+    // Nascondi i bottoni con classe 'setImpostorsHidden' e 'setDeadHidden' relativi al giocatore specificato
+    const setImpostorsHiddenButtons = document.querySelectorAll(`#${formId} .setImpostorsHidden`);
+    setImpostorsHiddenButtons.forEach(button => {
+        button.style.display = 'none';
+    });
+
+    const setDeadHiddenButtons = document.querySelectorAll(`#${formId} .setDeadHidden`);
+    setDeadHiddenButtons.forEach(button => {
+        button.style.display = 'none';
+    });
 }
 
 function setDead(formId) {
+    // Funzionalità originale di setDead
     setBordoColore(formId, 'gray', 10);
-}
 
+    // Mostra i bottoni con classe 'setDeadHidden' relativi al giocatore specificato
+    const setDeadHiddenButtons = document.querySelectorAll(`#${formId} .setDeadHidden`);
+    setDeadHiddenButtons.forEach(button => {
+        button.style.display = 'inline-block';
+    });
+
+    // Nascondi i bottoni con classe 'setImpostorsHidden' e 'setCrewmateHidden' relativi al giocatore specificato
+    const setImpostorsHiddenButtons = document.querySelectorAll(`#${formId} .setImpostorsHidden`);
+    setImpostorsHiddenButtons.forEach(button => {
+        button.style.display = 'none';
+    });
+
+    const setCrewmateHiddenButtons = document.querySelectorAll(`#${formId} .setCrewmateHidden`);
+    setCrewmateHiddenButtons.forEach(button => {
+        button.style.display = 'none';
+    });
+}
 function pulisciCampi() {
-    // Seleziona tutti gli elementi di input con la classe 'tag-input'
-    const tagInputs = document.querySelectorAll('.tag-input');
-
-    // Resetta il valore di tutti gli input
-    tagInputs.forEach(input => {
-        input.value = '';
-    });
-
-    // Resetta anche i bordi colorati dei form
-    resetBordiColorati();
-    
-    // Resetta i risultati
-    const resultContainer = document.querySelector('.result-container');
-    resultContainer.innerHTML = ''; // Rimuovi tutti i contenuti dal contenitore dei risultati
-}
-
-function setBordoColore(formId, colore, padding) {
-    const form = document.getElementById(formId);
-    form.style.border = `5px solid ${colore}`;
-    form.style.padding = padding;
-}
-
-function resetBordiColorati() {
-    // Seleziona tutti gli elementi con la classe 'form-group'
-    const formGroups = document.querySelectorAll('.form-group');
-
-    // Resetta il bordo di tutti i form
-    formGroups.forEach(formGroup => {
-        formGroup.style.border = '';
-        formGroup.style.borderRadius = '';
-        formGroup.style.padding = '';
-    });
+    // Esegui il refresh della pagina
+    location.reload();
 }
