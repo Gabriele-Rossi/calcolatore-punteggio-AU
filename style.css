@@ -1,8 +1,45 @@
+:root{
+    --magenta: rgb(189, 1, 70);
+    --grigio: rgb(87, 87, 87);
+    --cardgray: #212121;
+    --whitecustom: rgb(218, 218, 218);
+    --darkgray: rgb(33, 37, 41);
+    --bluscuro: #151B22;
+    --prussia: #003566;
+    --giallo: #ffc300;
+    --arancione: #f99113;
+    --salmon: #59ab6e;
+    --beige: #eae2b7;
+    --verdino:#59ab6e;
+    --neroGrigio:#151b22;
+}
 body {
     padding: 20px;
-    background-color: #343a40;
+    background: url(https://images.everyeye.it/img-notizie/among-us-come-giocare-amici-pc-android-iphone-v11-477889.jpg);
     color: #f8f9fa;
+    background-attachment: fixed;
 }
+/* Regola CSS per i colori dei personaggi di Among Us */
+/* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
+/* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
+.among-us-colors {
+    background: linear-gradient(45deg,
+        #FF0000 25%,   
+        orange 25%,
+        #00b8f0 75%,  /* Rosso */
+        #0d6efd 75%    /* Ciano */
+    );
+    color: #fdfcfc; /* Testo bianco per contrasto */
+    background-size: 200% 100%; /* Fissa la dimensione del gradiente */
+    animation: colorAnimation 6.5s 2.5s infinite alternate-reverse; /* Aggiunge un'animazione di sfarfallio */
+}
+
+
+@keyframes colorAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 100%; }
+}
+
 
 .wrapper {
     display: grid;
@@ -24,6 +61,7 @@ body {
     background-color: #e4761c;
     color: white;
 }
+
 
 .tag-input {
     margin-bottom: 10px;
@@ -53,6 +91,8 @@ body {
 
 .form-group {
     transition: border-color 0.7s ease;
+    backdrop-filter: blur(20px);
+    margin-top: 20px;
 }
 
 .set-impostore-btn {
@@ -71,6 +111,17 @@ body {
 .hidden {
     display: none;
 }
+.btn-calcola{
+    background: linear-gradient(45deg,
+    #FF0000 25%,   
+    orange 25%,
+    #00b8f0 75%,  /* Rosso */
+    #0d6efd 75%    /* Ciano */
+);
+color: #fdfcfc; /* Testo bianco per contrasto */
+background-size: 200% 100%; /* Fissa la dimensione del gradiente */
+animation: colorAnimation 6.5s 2.5s infinite alternate; /* Aggiunge un'animazione di sfarfallio */
+}
 
 .setImpostorsHidden,
 .setCrewmateHidden,
@@ -83,25 +134,31 @@ body {
 .accordionStyle{
     margin-top: 300px;
 }
-
+label{
+    font-size: x-large;
+    margin-bottom:20px;
+}
 .accordion-flush>.accordion-item>.accordion-header .accordion-button, .accordion-flush>.accordion-item>.accordion-header .accordion-button.collapsed {
     border-radius: 10px;
     border: 5px solid white;
     background-color: #343A40;
 }
-.accordion-body{
-    background-color: #343A40;
+.accordion-body {
+
     color: #ffffff;
+    /* background-color: black; */
 }
 .accordion-header {
     margin-bottom: 0;
     background-color: #343A40;
 }
 .accordion-flush>.accordion-item {
-    background-color: #343A40;
+    background-color: transparent !important;
+    backdrop-filter: blur(15px);
 }
 .accordion-item:not(:first-of-type) {
-    background-color: #343A40;
+    background-color: transparent !important;
+    backdrop-filter: blur(15px);
 }
 .accordion-button:not(.collapsed) {
     color: red;
@@ -145,6 +202,9 @@ h4{
         
 
     }
+    .accordion {
+        padding-top: 45%;
+    }
 }
     
 
@@ -168,7 +228,12 @@ h4{
 }
     
 
-
+/* Media query per la responsività del div dei tag e valori */
+@media screen and (min-width: 767px) {
+    .accordion {
+        padding-top: 8%;
+    }
+}
 
 
 /* Media query per la responsività del div dei tag e valori */
@@ -181,6 +246,9 @@ h4{
         margin-top: 80px !important;
     
     }
+    .accordion {
+        padding-top: 25%;
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width: 430px) {
@@ -188,5 +256,53 @@ h4{
         display: flex;
         flex-direction: column-reverse;
     }
+    .accordion {
+        padding-top: 45%;
+    }
 }
 
+
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-active-icon);
+    transform: var(--bs-accordion-btn-icon-transform);
+    background-color: red;
+    border-radius: 50%;
+}
+.accordion-button::after {
+    background-color: #00B8F0;;
+    border-radius: 50%;
+}
+
+
+button {
+
+    border-radius: 10px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+
+  }
+  
+  button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+  .btncustomsalmon{
+    background-color: var(--salmon);
+    color: var(--bluscuro);
+    border: 3px solid var(--bluscuro);
+    transition: all 0.4s ease-out; 
+    border-radius: 0px; 
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.btncustomsalmon:hover{
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    color: var(--salmon);
+    border: 2px solid var(--salmon);
+}
