@@ -23,25 +23,23 @@ function calcolaPunteggio() {
 
     // Itera su tutti gli input di tag
     tagInputs.forEach(input => {
-        const playerName = input.id; // Recupera il nome del giocatore
+        const playerNameInput = input.previousElementSibling; // Ottieni l'elemento input del nome del giocatore
+        const playerName = playerNameInput.value.trim(); // Recupera il nome del giocatore
+
+        // Se il nome del giocatore è vuoto, passa al prossimo input
+        if (!playerName) {
+            return;
+        }
+
         const tags = input.value.split(',').map(tag => tag.trim()); // Recupera i tag e rimuove gli spazi
     
         // Inizializza il punteggio del giocatore se non esiste
         punteggiGiocatori[playerName] = punteggiGiocatori[playerName] || 0;
     
-        // Debug: controlla i punteggi intermedi
-        console.log('Tags:', tags);
-        console.log('Punteggio iniziale:', punteggiGiocatori[playerName]);
-    
         // Somma i punteggi per ciascun tag
         tags.forEach(tag => {
             const punteggioTag = getPunteggioTag(tag);
             punteggiGiocatori[playerName] += punteggioTag;
-    
-            // Debug: controlla il punteggio di ciascun tag
-            console.log('Tag:', tag);
-            console.log('Punteggio:', punteggioTag);
-            console.log('Punteggio parziale:', punteggiGiocatori[playerName]);
         });
     });
 
@@ -51,9 +49,14 @@ function calcolaPunteggio() {
 
     // Mostra i punteggi per ogni giocatore
     Object.entries(punteggiGiocatori).forEach(([player, score]) => {
-        resultContainer.innerHTML += `<p>${player}: ${score}</p>`;
+        // Formatta il nome del giocatore in grassetto e oro
+        const formattedPlayerName = `<strong style="color: black;">${player}</strong>`;
+        resultContainer.innerHTML += `<p>${formattedPlayerName}: ${score}</p>`;
     });
 }
+
+
+
 
 function getPunteggioTag(tag) {
     console.log('Tag:', tag); // Aggiunta del log per controllare il valore del tag
@@ -184,3 +187,42 @@ function pulisciCampi() {
     // Esegui il refresh della pagina
     location.reload();
 }
+
+function pulisciCampiTag() {
+    // Recupera tutti gli elementi di input con la classe 'tag-input'
+    const tagInputs = document.querySelectorAll('.tag-input');
+
+    // Itera su tutti gli input di tag e pulisci il loro valore
+    tagInputs.forEach(input => {
+        input.value = '';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleziona il bottone per pulire i nomi dei giocatori
+    const clearNamesBtn = document.getElementById('clearNamesBtn');
+
+    // Aggiungi un gestore di eventi al clic del bottone per pulire i nomi dei giocatori
+    clearNamesBtn.addEventListener('click', function() {
+        // Seleziona tutti gli input dei nomi dei giocatori
+        const playerNameInputs = document.querySelectorAll('.playerNameInput');
+
+        // Itera su ciascun input e imposta il suo valore su una stringa vuota
+        playerNameInputs.forEach(function(input) {
+            input.value = '';
+        });
+    });
+});
+// Funzione per pulire i campi dei nomi dei giocatori
+function clearPlayerNames() {
+    const playerNameInputs = document.querySelectorAll('.playerNameInput'); // Seleziona tutti i campi dei nomi dei giocatori
+
+    // Itera su tutti i campi dei nomi dei giocatori e svuotali
+    playerNameInputs.forEach(input => {
+        input.value = ''; // Svuota il campo del nome del giocatore
+    });
+}
+
+// Aggiungi un gestore di eventi al bottone "Pulisci Nomi" per eseguire la funzione al clic
+const clearNamesBtn = document.getElementById('clearNamesBtn');
+clearNamesBtn.addEventListener('click', clearPlayerNames);

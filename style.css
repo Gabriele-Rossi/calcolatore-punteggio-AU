@@ -40,7 +40,9 @@ body {
     100% { background-position: 100% 100%; }
 }
 
-
+.largeWidth{
+    max-width: 2000px !important;
+}
 .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -71,13 +73,29 @@ body {
 
 .result-container {
     margin: 20px auto 20px auto;
+    padding: 20px 20px 20px 20px;
     color: white;
-    font-size:x-large;
+    font-size: x-large;
     font-weight: bold;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    border: 2px solid white;
+    border-radius: 8px;
+    backdrop-filter: blur(10px) invert(15);
+}
+
+.result-container h4 {
+    color: rgb(0, 0, 0); /* Imposta il colore dell'intestazione su oro */
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+.result-container p {
+    font-weight: 500; /* Imposta il testo dei punteggi finali in grassetto */
+    color: rgb(53, 49, 49); /* Imposta il colore dei punteggi finali su oro */
+    font-size: x-large;
 }
 
 .calculate-btn {
