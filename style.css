@@ -19,6 +19,11 @@ body {
     color: #f8f9fa;
     background-attachment: fixed;
 }
+input{
+    font-size: xx-large;
+    font-weight: 800;
+    color: #000000;
+}
 /* Regola CSS per i colori dei personaggi di Among Us */
 /* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
 /* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
@@ -107,6 +112,12 @@ body {
     font-size: xx-large;
 }
 
+.playerNameInput{
+    color: orange;
+    background-color: #000000;
+    font-weight:900;
+    margin-bottom: 20px;
+}
 .form-group {
     transition: border-color 0.7s ease;
     backdrop-filter: blur(20px);
@@ -203,6 +214,7 @@ h4{
     .form-control{
         padding: 1rem 0.75rem !important;
         font-size: 12px !important;
+ 
     }
     .mobile-responsive{
         display: none;
