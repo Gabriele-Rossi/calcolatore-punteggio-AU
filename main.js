@@ -109,16 +109,15 @@ otherElement.addEventListener('click', handleOtherAction);
 
 // Altra logica JavaScript...
 
-function setBordoColore(formId, colore, padding) {
+function setBordoColore(formId, colore, shadow) {
     const form = document.getElementById(formId);
-    form.style.border = `5px solid ${colore}`;
-    form.style.borderRadius = '10px';
-    form.style.padding = padding ? `${padding}px` : '0';
+    form.style.backgroundColor = `${colore}`;
+    form.style.boxShadow = `${shadow}`;
 }
 
 function setImpostore(formId) {
     // Funzionalità originale di setImpostore
-    setBordoColore(formId, 'red', 10);
+    setBordoColore(formId, "#ff00005c", "rgb(101 47 54) 15px 15px 30px, rgb(255 255 255) -15px -15px 30px");
 
     // Mostra i bottoni con classe 'setImpostorsHidden' relativi al giocatore specificato
     const setImpostorsHiddenButtons = document.querySelectorAll(`#${formId} .setImpostorsHidden`);
@@ -142,7 +141,7 @@ function setCrewmate(formId) {
     // Funzionalità originale di setCrewmate
     const crewmateButton = document.querySelector('.set-crewmate-btn');
     const coloreBottone = getComputedStyle(crewmateButton).backgroundColor;
-    setBordoColore(formId, "#00b8f0", 10);
+    setBordoColore(formId, "rgb(0 184 240 / 75%)", "rgb(31, 82, 107) 15px 15px 30px, rgb(255, 255, 255) -15px -15px 30px");
 
     // Mostra i bottoni con classe 'setCrewmateHidden' relativi al giocatore specificato
     const setCrewmateHiddenButtons = document.querySelectorAll(`#${formId} .setCrewmateHidden`);
@@ -164,7 +163,7 @@ function setCrewmate(formId) {
 
 function setDead(formId) {
     // Funzionalità originale di setDead
-    setBordoColore(formId, 'gray', 10);
+    setBordoColore(formId, '#808080ad', "rgb(59 59 59) 15px 15px 30px, rgb(255, 255, 255) -15px -15px 30px");
 
     // Mostra i bottoni con classe 'setDeadHidden' relativi al giocatore specificato
     const setDeadHiddenButtons = document.querySelectorAll(`#${formId} .setDeadHidden`);
