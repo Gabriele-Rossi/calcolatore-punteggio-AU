@@ -540,6 +540,16 @@
     backdrop-filter: blur(1rem);
     border-radius: 10px;
   }
+  #container-stars4 {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.5s;
+    backdrop-filter: blur(1rem);
+    border-radius: 10px;
+  }
   strong {
     z-index: 2;
     font-size: 22px;
@@ -558,6 +568,11 @@
     width: 12rem;
   }
   #glow3 {
+    position: absolute;
+    display: flex;
+    width: 12rem;
+  }
+  #glow4 {
     position: absolute;
     display: flex;
     width: 12rem;
@@ -617,6 +632,12 @@
     width: 200rem;
     height: 200rem;
   }
+  #stars4 {
+    position: relative;
+    background: transparent;
+    width: 200rem;
+    height: 200rem;
+  }
   
   #stars::after {
     content: "";
@@ -655,6 +676,19 @@
     animation: animStarRotate 90s linear infinite;
   }
   #stars3::after {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+  }
+  #stars4::after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: -100rem;
+    width: 100%;
+    height: 100%;
+    animation: animStarRotate 90s linear infinite;
+  }
+  #stars4::after {
     background-image: radial-gradient(#ffffff 1px, transparent 1%);
     background-size: 50px 50px;
   }
@@ -697,6 +731,20 @@
     animation: animStar 60s linear infinite;
   }
   #stars3::before {
+    background-image: radial-gradient(#ffffff 1px, transparent 1%);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+  #stars4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 500%;
+    animation: animStar 60s linear infinite;
+  }
+  #stars4::before {
     background-image: radial-gradient(#ffffff 1px, transparent 1%);
     background-size: 50px 50px;
     opacity: 0.5;
