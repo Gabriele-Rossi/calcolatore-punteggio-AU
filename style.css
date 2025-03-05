@@ -1,955 +1,955 @@
 :root{
-    --magenta: rgb(189, 1, 70);
-    --grigio: rgb(87, 87, 87);
-    --cardgray: #212121;
-    --whitecustom: rgb(218, 218, 218);
-    --darkgray: rgb(33, 37, 41);
-    --bluscuro: #151B22;
-    --prussia: #003566;
-    --giallo: #ffc300;
-    --arancione: #f99113;
-    --salmon: #59ab6e;
-    --beige: #eae2b7;
-    --verdino:#59ab6e;
-    --neroGrigio:#151b22;
-  }
-  body {
-    padding: 20px;
-    /* background: url(https://images.everyeye.it/img-notizie/among-us-come-giocare-amici-pc-android-iphone-v11-477889.jpg); */
-    color: #f8f9fa;
-    background-attachment: fixed;
-  }
-  input{
-    font-size: xx-large;
-    font-weight: 800;
-    color: #000000;
-  }
-  /* Regola CSS per i colori dei personaggi di Among Us */
-  /* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
-  /* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
-  .among-us-colors {
-    background: linear-gradient(45deg,
-    #FF0000 25%,   
-    orange 25%,
-    #00b8f0 75%,  /* Rosso */
-    #0d6efd 75%    /* Ciano */
-    );
-    color: #fdfcfc; /* Testo bianco per contrasto */
-    background-size: 200% 100%; /* Fissa la dimensione del gradiente */
-    animation: colorAnimation 6.5s 2.5s infinite alternate-reverse; /* Aggiunge un'animazione di sfarfallio */
-  }
+  --magenta: rgb(189, 1, 70);
+  --grigio: rgb(87, 87, 87);
+  --cardgray: #212121;
+  --whitecustom: rgb(218, 218, 218);
+  --darkgray: rgb(33, 37, 41);
+  --bluscuro: #151B22;
+  --prussia: #003566;
+  --giallo: #ffc300;
+  --arancione: #f99113;
+  --salmon: #59ab6e;
+  --beige: #eae2b7;
+  --verdino:#59ab6e;
+  --neroGrigio:#151b22;
+}
+body {
+  padding: 20px;
+  /* background: url(https://images.everyeye.it/img-notizie/among-us-come-giocare-amici-pc-android-iphone-v11-477889.jpg); */
+  color: #f8f9fa;
+  background-attachment: fixed;
+}
+input{
+  font-size: xx-large;
+  font-weight: 800;
+  color: #000000;
+}
+/* Regola CSS per i colori dei personaggi di Among Us */
+/* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
+/* Regola CSS per i colori dei personaggi di Among Us senza sfumature tra di loro */
+.among-us-colors {
+  background: linear-gradient(45deg,
+  #FF0000 25%,   
+  orange 25%,
+  #00b8f0 75%,  /* Rosso */
+  #0d6efd 75%    /* Ciano */
+  );
+  color: #fdfcfc; /* Testo bianco per contrasto */
+  background-size: 200% 100%; /* Fissa la dimensione del gradiente */
+  animation: colorAnimation 6.5s 2.5s infinite alternate-reverse; /* Aggiunge un'animazione di sfarfallio */
+}
+
+
+@keyframes colorAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 100%; }
+}
+
+.largeWidth{
+  max-width: 2000px !important;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   
   
-  @keyframes colorAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 100%; }
-  }
+}
+.btn{
+  min-width: 85px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+.btn-info{
+  background-color: #00b8f0;
+}
+.btn-warning{
+  background-color: #e4761c;
+  color: white;
+}
+.btn-impostor{
+  background: linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box, linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  text-shadow: 1px 1px 1px #00000040;
+  box-shadow: 8px 8px 20px 0px #45090059;
+  padding: 10px 15px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 5%;
+}
+.btn-impostor:hover {
+  box-shadow: none;
+  opacity: 80%;
+}
+
+.btn-crewmate{
+  background: linear-gradient(140.14deg, #0eddec 15.05%, #0a77aa 114.99%) padding-box, linear-gradient(142.51deg, #65edff 8.65%, #0562af 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  text-shadow: 1px 1px 1px #00000040;
+  box-shadow: 8px 8px 20px 0px #00244559;
+  padding: 10px 15px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 18px;
+  font-weight: 500;
+  color: black !important;
+  margin: 5px 5%;
+}
+.btn-crewmate:hover {
+  box-shadow: none;
+  opacity: 80%;
+}
+.btn-death{
+  background: linear-gradient(140.14deg, #e6e6e6 15.05%, #7e7e7e 114.99%) padding-box, linear-gradient(142.51deg, hsl(0, 0%, 100%) 8.65%, #3a3a3a 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  text-shadow: 1px 1px 1px #00000040;
+  box-shadow: 8px 8px 20px 0px #00294559;
+  padding: 10px 25px;
+  line-height: 20px;
+  cursor: pointer;
+  color: black !important;
+  transition: all 0.3s;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 5%;
   
-  .largeWidth{
-    max-width: 2000px !important;
+}
+.btn-death:hover {
+  box-shadow: none;
+  opacity: 80%;
+}
+.btn-penalty{
+  background: linear-gradient(140.14deg, #252525 15.05%, #1f1e1e 114.99%) padding-box, linear-gradient(142.51deg, hsl(0, 0%, 23%) 8.65%, #000000 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  text-shadow: 1px 1px 1px #00000040;
+  box-shadow: 8px 8px 20px 0px #00294559;
+  padding: 10px 15px;
+  line-height: 20px;
+  cursor: pointer;
+  color: white !important;
+  transition: all 0.3s;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 5%;
+}
+.btn-penalty:hover {
+  box-shadow: none;
+  opacity: 80%;
+}
+.tag-input {
+  margin-bottom: 10px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.result-container {
+  margin: 20px auto 20px auto;
+  padding: 20px 20px 20px 20px;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
+  padding: 30px 10px;
+  margin: 20px 20px;
+}
+
+.result-container h4 {
+  color: rgb(0, 0, 0); /* Imposta il colore dell'intestazione su oro */
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.result-container p {
+  font-weight: 500; /* Imposta il testo dei punteggi finali in grassetto */
+  color: rgb(53, 49, 49); /* Imposta il colore dei punteggi finali su oro */
+  font-size: x-large;
+}
+
+.calculate-btn {
+  margin: 20px auto 20px auto;
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.playerNameInput{
+  margin: 15px auto;
+  border: none;
+  outline: none;
+  max-width: 90%;
+  padding: 10px 20px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-weight: bolder;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: black;
+}
+
+.form-group {
+  transition: border-color 0.7s ease;
+  backdrop-filter: blur(20px);
+  margin-top: 20px;
+}
+
+.set-impostore-btn {
+  margin-top: 10px; 
+}
+
+.set-crewmate-btn {
+  margin-top: 10px;
+  
+}
+
+.set-tag-btn {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+.btn-calcola{
+  background: linear-gradient(45deg,
+  #FF0000 25%,   
+  orange 25%,
+  #00b8f0 75%,  /* Rosso */
+  #0d6efd 75%    /* Ciano */
+  );
+  color: #fdfcfc; /* Testo bianco per contrasto */
+  background-size: 200% 100%; /* Fissa la dimensione del gradiente */
+  animation: colorAnimation 6.5s 2.5s infinite alternate; /* Aggiunge un'animazione di sfarfallio */
+}
+
+.setImpostorsHidden,
+.setCrewmateHidden,
+.setDeadHidden {
+  display: none;
+}
+.accordion{
+  padding-top:8%;
+}
+.accordionStyle{
+  margin-top: 300px;
+}
+.accordion-layout{
+  margin: 20px auto 20px auto;
+  padding: 20px 20px 20px 20px;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px !important;
+  background: #e0e0e0 !important;
+  box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
+  padding: 30px 10px;
+  margin: 20px 20px;
+}
+.accordion-flush>.accordion-item>.accordion-header .accordion-button, .accordion-flush>.accordion-item>.accordion-header .accordion-button.collapsed {
+  border-radius: 10px;
+  border: 5px solid transparent !important;
+  background-color: transparent !important;
+}
+label{
+  font-size: x-large;
+  margin-bottom:20px;
+}
+.accordion-body {
+  
+  color: #ffffff;
+  /* background-color: black; */
+}
+.accordion-header {
+  margin-bottom: 0;
+  background-color: #343A40;
+}
+.accordion-flush>.accordion-item {
+  background-color: transparent !important;
+  backdrop-filter: blur(15px);
+}
+.accordion-item:not(:first-of-type) {
+  background-color: transparent !important;
+  backdrop-filter: blur(15px);
+}
+.accordion-button:not(.collapsed) {
+  color: transparent !important;
+  background-color: #343A40;
+  border: 3px solid transparent !important
+}
+h4{
+  color: white;
+}
+.collapsed{
+  border: 3px solid transparent !important;
+}
+.flexForm{
+  
+  justify-content: space-around;
+  
+}
+.card-basis{
+  max-width: 300px;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
+  padding: 30px 10px;
+  margin: 20px 20px;
+}
+.card-basis:hover{
+  translate: 0.6s ease-in-out;
+  transform: scale(0.95);
+  box-shadow: rgb(59, 59, 59) 5px 3px 12px, rgb(119 119 119) -5px -3px 4px 0px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 430px) {
+  .set-crewmate-btn,
+  .set-impostore-btn {
+    min-width: 138px !important;
+    font-size: 12px;
+    
+  }
+  .form-control{
+    padding: 1rem 0.75rem !important;
+    font-size: 18px !important;
+    
+  }
+  .mobile-responsive{
+    display: none;
+  }
+  .hidden {
+    display: block;
+    min-width: 138px !important;
+    font-size: 14px;
+    font-weight: bolder;
+    background-color: rgb(0, 0, 0) !important;
+    color: white !important;
+    border: 1px solid white !important;
+    padding: 10px;
+    border-radius: 5px;
+    
+    
+  }
+  .accordion {
+    padding-top: 45%;
+  }
+}
+
+
+
+/* Aggiungi stile per il div dei tag e valori */
+.tag-values-container {
+  color: #ffffff;
+  margin-top: 20px;
+}
+
+/* Media query per la responsività del div dei tag e valori */
+@media screen and (max-width: 767px) {
+  .tag-values-container {
+    font-size: 14px;
   }
   .wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
     
+    padding-top: 80px !important;
     
   }
-  .btn{
-    min-width: 85px;
-    font-weight: bold;
-    border: 2px solid white;
-    border-radius: 8px;
+}
+
+
+/* Media query per la responsività del div dei tag e valori */
+@media screen and (min-width: 767px) {
+  .accordion {
+    padding-top: 8%;
   }
-  .btn-info{
-    background-color: #00b8f0;
-  }
-  .btn-warning{
-    background-color: #e4761c;
-    color: white;
-  }
-  .btn-impostor{
-    background: linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box, linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box;
-    border-radius: 7px;
-    border: 2px solid transparent;
-    text-shadow: 1px 1px 1px #00000040;
-    box-shadow: 8px 8px 20px 0px #45090059;
-    padding: 10px 15px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 5px 5%;
-  }
-  .btn-impostor:hover {
-    box-shadow: none;
-    opacity: 80%;
-  }
-  
-  .btn-crewmate{
-    background: linear-gradient(140.14deg, #0eddec 15.05%, #0a77aa 114.99%) padding-box, linear-gradient(142.51deg, #65edff 8.65%, #0562af 88.82%) border-box;
-    border-radius: 7px;
-    border: 2px solid transparent;
-    text-shadow: 1px 1px 1px #00000040;
-    box-shadow: 8px 8px 20px 0px #00244559;
-    padding: 10px 15px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-size: 18px;
-    font-weight: 500;
-    color: black !important;
-    margin: 5px 5%;
-  }
-  .btn-crewmate:hover {
-    box-shadow: none;
-    opacity: 80%;
-  }
-  .btn-death{
-    background: linear-gradient(140.14deg, #e6e6e6 15.05%, #7e7e7e 114.99%) padding-box, linear-gradient(142.51deg, hsl(0, 0%, 100%) 8.65%, #3a3a3a 88.82%) border-box;
-    border-radius: 7px;
-    border: 2px solid transparent;
-    text-shadow: 1px 1px 1px #00000040;
-    box-shadow: 8px 8px 20px 0px #00294559;
-    padding: 10px 25px;
-    line-height: 20px;
-    cursor: pointer;
-    color: black !important;
-    transition: all 0.3s;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 5px 5%;
-    
-  }
-  .btn-death:hover {
-    box-shadow: none;
-    opacity: 80%;
-  }
-  .btn-penalty{
-    background: linear-gradient(140.14deg, #252525 15.05%, #1f1e1e 114.99%) padding-box, linear-gradient(142.51deg, hsl(0, 0%, 23%) 8.65%, #000000 88.82%) border-box;
-    border-radius: 7px;
-    border: 2px solid transparent;
-    text-shadow: 1px 1px 1px #00000040;
-    box-shadow: 8px 8px 20px 0px #00294559;
-    padding: 10px 15px;
-    line-height: 20px;
-    cursor: pointer;
-    color: white !important;
-    transition: all 0.3s;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 5px 5%;
-  }
-  .btn-penalty:hover {
-    box-shadow: none;
-    opacity: 80%;
-  }
-  .tag-input {
-    margin-bottom: 10px;
-    color: #000000;
-    font-weight: bold;
-  }
-  
-  .result-container {
-    margin: 20px auto 20px auto;
-    padding: 20px 20px 20px 20px;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
-    padding: 30px 10px;
-    margin: 20px 20px;
-  }
-  
-  .result-container h4 {
-    color: rgb(0, 0, 0); /* Imposta il colore dell'intestazione su oro */
-    font-size: xx-large;
-    font-weight: 700;
-  }
-  
-  .result-container p {
-    font-weight: 500; /* Imposta il testo dei punteggi finali in grassetto */
-    color: rgb(53, 49, 49); /* Imposta il colore dei punteggi finali su oro */
-    font-size: x-large;
-  }
-  
-  .calculate-btn {
-    margin: 20px auto 20px auto;
-    display: flex;
-    justify-content: center;
-    min-width: 200px;
-    font-weight: bold;
-    font-size: xx-large;
-  }
-  
-  .playerNameInput{
-    margin: 15px auto;
-    border: none;
-    outline: none;
-    max-width: 90%;
-    padding: 10px 20px;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 5px;
-    font-weight: bolder;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    color: black;
-  }
-  
-  .form-group {
-    transition: border-color 0.7s ease;
-    backdrop-filter: blur(20px);
-    margin-top: 20px;
-  }
-  
-  .set-impostore-btn {
-    margin-top: 10px; 
-  }
-  
-  .set-crewmate-btn {
-    margin-top: 10px;
-    
-  }
-  
-  .set-tag-btn {
-    margin-top: 10px;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  .btn-calcola{
-    background: linear-gradient(45deg,
-    #FF0000 25%,   
-    orange 25%,
-    #00b8f0 75%,  /* Rosso */
-    #0d6efd 75%    /* Ciano */
-    );
-    color: #fdfcfc; /* Testo bianco per contrasto */
-    background-size: 200% 100%; /* Fissa la dimensione del gradiente */
-    animation: colorAnimation 6.5s 2.5s infinite alternate; /* Aggiunge un'animazione di sfarfallio */
-  }
-  
-  .setImpostorsHidden,
-  .setCrewmateHidden,
-  .setDeadHidden {
-    display: none;
-  }
-  .accordion{
-    padding-top:8%;
-  }
-  .accordionStyle{
-    margin-top: 300px;
-  }
-  .accordion-layout{
-    margin: 20px auto 20px auto;
-    padding: 20px 20px 20px 20px;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 30px !important;
-    background: #e0e0e0 !important;
-    box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
-    padding: 30px 10px;
-    margin: 20px 20px;
-  }
-  .accordion-flush>.accordion-item>.accordion-header .accordion-button, .accordion-flush>.accordion-item>.accordion-header .accordion-button.collapsed {
-    border-radius: 10px;
-    border: 5px solid transparent !important;
-    background-color: transparent !important;
-  }
-  label{
-    font-size: x-large;
-    margin-bottom:20px;
-  }
-  .accordion-body {
-    
-    color: #ffffff;
-    /* background-color: black; */
-  }
-  .accordion-header {
-    margin-bottom: 0;
-    background-color: #343A40;
-  }
-  .accordion-flush>.accordion-item {
-    background-color: transparent !important;
-    backdrop-filter: blur(15px);
-  }
-  .accordion-item:not(:first-of-type) {
-    background-color: transparent !important;
-    backdrop-filter: blur(15px);
-  }
-  .accordion-button:not(.collapsed) {
-    color: transparent !important;
-    background-color: #343A40;
-    border: 3px solid transparent !important
-  }
-  h4{
-    color: white;
-  }
-  .collapsed{
-    border: 3px solid transparent !important;
-  }
-  .flexForm{
-    
-    justify-content: space-around;
-    
-  }
-  .card-basis{
-    max-width: 300px;
-    border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
-    padding: 30px 10px;
-    margin: 20px 20px;
-  }
-  .card-basis:hover{
-    translate: 0.6s ease-in-out;
-    transform: scale(0.95);
-    box-shadow: rgb(59, 59, 59) 5px 3px 12px, rgb(119 119 119) -5px -3px 4px 0px;
-  }
-  
-  @media screen and (min-width: 320px) and (max-width: 430px) {
-    .set-crewmate-btn,
-    .set-impostore-btn {
-      min-width: 138px !important;
-      font-size: 12px;
-      
-    }
-    .form-control{
-      padding: 1rem 0.75rem !important;
-      font-size: 18px !important;
-      
-    }
-    .mobile-responsive{
-      display: none;
-    }
-    .hidden {
-      display: block;
-      min-width: 138px !important;
-      font-size: 14px;
-      font-weight: bolder;
-      background-color: rgb(0, 0, 0) !important;
-      color: white !important;
-      border: 1px solid white !important;
-      padding: 10px;
-      border-radius: 5px;
-      
-      
-    }
-    .accordion {
-      padding-top: 45%;
-    }
-  }
-  
-  
-  
-  /* Aggiungi stile per il div dei tag e valori */
+}
+
+
+/* Media query per la responsività del div dei tag e valori */
+@media screen and (max-width: 767px) {
   .tag-values-container {
-    color: #ffffff;
-    margin-top: 20px;
+    font-size: 14px;
   }
-  
-  /* Media query per la responsività del div dei tag e valori */
-  @media screen and (max-width: 767px) {
-    .tag-values-container {
-      font-size: 14px;
-    }
-    .wrapper {
-      
-      padding-top: 80px !important;
-      
-    }
-  }
-  
-  
-  /* Media query per la responsività del div dei tag e valori */
-  @media screen and (min-width: 767px) {
-    .accordion {
-      padding-top: 8%;
-    }
-  }
-  
-  
-  /* Media query per la responsività del div dei tag e valori */
-  @media screen and (max-width: 767px) {
-    .tag-values-container {
-      font-size: 14px;
-    }
-    .wrapper {
-      
-      margin-top: 80px !important;
-      
-    }
-    .accordion {
-      padding-top: 25%;
-    }
-  }
-  
-  @media screen and (min-width: 320px) and (max-width: 430px) {
-    .wrapper {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-    .accordion {
-      padding-top: 45%;
-    }
-  }
-  
-  
-  .accordion-button:not(.collapsed)::after {
-    background-image: var(--bs-accordion-btn-active-icon);
-    transform: var(--bs-accordion-btn-icon-transform);
-    background-color: transparent ;
-    border-radius: 50%;
-    background-color: transparent !important;
-  }
-  .accordion-button::after {
-    background-color: transparent !important;
-    border-radius: 50%;
-  }
-  
-  
-  button {
+  .wrapper {
     
-    border-radius: 10px;
-    border: 2px solid #FAFAFA;
-    background: #252525;
-    box-shadow: 3px 3px #fafafa;
-    cursor: pointer;
+    margin-top: 80px !important;
     
   }
-  
-  button:active {
-    box-shadow: none;
-    transform: translate(3px, 3px);
+  .accordion {
+    padding-top: 25%;
   }
-  .btncustomsalmon{
-    background-color: var(--salmon);
-    color: var(--bluscuro);
-    border: 3px solid var(--bluscuro);
-    transition: all 0.4s ease-out; 
-    border-radius: 0px; 
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-  }
-  .btncustomsalmon:hover{
-    transition: all 0.4s ease-in-out;
-    background-color: white;
-    color: var(--salmon);
-    border: 2px solid var(--salmon);
-  }
-  
-  .btn2 {
+}
+
+@media screen and (min-width: 320px) and (max-width: 430px) {
+  .wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 14rem;
-    overflow: hidden;
-    height: 5rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #3bffef 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin: 20px auto 20px auto;
+    flex-direction: column-reverse;
   }
-  .btn3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 14rem;
-    overflow: hidden;
-    height: 5rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin: 20px auto 20px auto;
+  .accordion {
+    padding-top: 45%;
   }
-  .btn4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 14rem;
-    overflow: hidden;
-    height: 5rem;
-    background-size: 300% 300%;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
-    transition: 0.5s;
-    animation: gradient_301 5s ease infinite;
-    border: double 4px transparent;
-    background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #f80a0a 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    margin: 20px auto 20px auto;
+}
+
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-active-icon);
+  transform: var(--bs-accordion-btn-icon-transform);
+  background-color: transparent ;
+  border-radius: 50%;
+  background-color: transparent !important;
+}
+.accordion-button::after {
+  background-color: transparent !important;
+  border-radius: 50%;
+}
+
+
+button {
+  
+  border-radius: 10px;
+  border: 2px solid #FAFAFA;
+  background: #252525;
+  box-shadow: 3px 3px #fafafa;
+  cursor: pointer;
+  
+}
+
+button:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+.btncustomsalmon{
+  background-color: var(--salmon);
+  color: var(--bluscuro);
+  border: 3px solid var(--bluscuro);
+  transition: all 0.4s ease-out; 
+  border-radius: 0px; 
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.btncustomsalmon:hover{
+  transition: all 0.4s ease-in-out;
+  background-color: white;
+  color: var(--salmon);
+  border: 2px solid var(--salmon);
+}
+
+.btn2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  overflow: hidden;
+  height: 5rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #3bffef 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin: 20px auto 20px auto;
+}
+.btn3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  overflow: hidden;
+  height: 5rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin: 20px auto 20px auto;
+}
+.btn4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+  overflow: hidden;
+  height: 5rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #f80a0a 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin: 20px auto 20px auto;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+}
+#container-stars2 {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+}
+#container-stars3 {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+}
+#container-stars4 {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 10px;
+}
+strong {
+  z-index: 2;
+  font-size: 22px;
+  color: #FFFFFF;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+#glow2 {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+#glow3 {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+#glow4 {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1)
+}
+
+.btn:active {
+  border: double 4px #FE53BB;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #FE53BB;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+#stars2 {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+#stars3 {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+#stars4 {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+#stars2::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+#stars2::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+#stars3::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+#stars3::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+#stars4::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+#stars4::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+#stars2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+#stars2::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+#stars3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+#stars3::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+#stars4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+#stars4::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
   }
   
-  #container-stars {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
+  to {
+    transform: translateY(-135rem);
   }
-  #container-stars2 {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
-  }
-  #container-stars3 {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
-  }
-  #container-stars4 {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transition: 0.5s;
-    backdrop-filter: blur(1rem);
-    border-radius: 10px;
-  }
-  strong {
-    z-index: 2;
-    font-size: 22px;
-    color: #FFFFFF;
-    text-shadow: 0 0 4px white;
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
   }
   
-  #glow {
-    position: absolute;
-    display: flex;
-    width: 12rem;
+  to {
+    transform: rotate(0);
   }
-  #glow2 {
-    position: absolute;
-    display: flex;
-    width: 12rem;
-  }
-  #glow3 {
-    position: absolute;
-    display: flex;
-    width: 12rem;
-  }
-  #glow4 {
-    position: absolute;
-    display: flex;
-    width: 12rem;
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
   }
   
-  .circle {
-    width: 100%;
-    height: 30px;
-    filter: blur(2rem);
-    animation: pulse_3011 4s infinite;
-    z-index: -1;
+  50% {
+    background-position: 100% 50%;
   }
   
-  .circle:nth-of-type(1) {
-    background: rgba(254, 83, 186, 0.636);
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
   
-  .circle:nth-of-type(2) {
-    background: rgba(142, 81, 234, 0.704);
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
   }
   
-  .btn:hover #container-stars {
-    z-index: 1;
-    background-color: #212121;
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
-  
-  .btn:hover {
-    transform: scale(1.1)
+}
+.button4 {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  margin: 20px auto 20px auto;
+  touch-action: manipulation;
+}
+
+.shadow4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform
+  600ms
+  cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+  to left,
+  hsl(340deg 100% 16%) 0%,
+  hsl(340deg 100% 32%) 8%,
+  hsl(340deg 100% 32%) 92%,
+  hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.button4:hover {
+  filter: brightness(110%);
+}
+
+.button4:hover .front {
+  transform: translateY(-6px);
+  transition: transform
+  250ms
+  cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button4:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button4:hover .shadow {
+  transform: translateY(4px);
+  transition: transform
+  250ms
+  cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button4:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button4:focus:not(:focus-visible) {
+  outline: none;
+}
+.inputRounds{
+  width: 80%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  height: 38px;
+}
+.card-results{
+  width: 20%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 38px;
+  padding-top: 25px;
+  background-color: #0000004f;
+}
+.btn-results{
+  min-width: 85px;
+
+  font-weight: bold;
+  border: 1px solid #000000bf;
+  border-radius: 8px;
+  box-shadow: 1px 4px 5px 0px #000000bf;
+  max-width: 90%;
+}
+@media screen and (max-width:1320px){
+  .card-results{
+    width: 15%;
   }
-  
-  .btn:active {
-    border: double 4px #FE53BB;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    animation: none;
-  }
-  
-  .btn:active .circle {
-    background: #FE53BB;
-  }
-  
-  #stars {
-    position: relative;
-    background: transparent;
-    width: 200rem;
-    height: 200rem;
-  }
-  #stars2 {
-    position: relative;
-    background: transparent;
-    width: 200rem;
-    height: 200rem;
-  }
-  #stars3 {
-    position: relative;
-    background: transparent;
-    width: 200rem;
-    height: 200rem;
-  }
-  #stars4 {
-    position: relative;
-    background: transparent;
-    width: 200rem;
-    height: 200rem;
-  }
-  
-  #stars::after {
-    content: "";
-    position: absolute;
-    top: -10rem;
-    left: -100rem;
-    width: 100%;
-    height: 100%;
-    animation: animStarRotate 90s linear infinite;
-  }
-  
-  #stars::after {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-  }
-  #stars2::after {
-    content: "";
-    position: absolute;
-    top: -10rem;
-    left: -100rem;
-    width: 100%;
-    height: 100%;
-    animation: animStarRotate 90s linear infinite;
-  }
-  #stars2::after {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-  }
-  #stars3::after {
-    content: "";
-    position: absolute;
-    top: -10rem;
-    left: -100rem;
-    width: 100%;
-    height: 100%;
-    animation: animStarRotate 90s linear infinite;
-  }
-  #stars3::after {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-  }
-  #stars4::after {
-    content: "";
-    position: absolute;
-    top: -10rem;
-    left: -100rem;
-    width: 100%;
-    height: 100%;
-    animation: animStarRotate 90s linear infinite;
-  }
-  #stars4::after {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-  }
-  #stars::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 170%;
-    height: 500%;
-    animation: animStar 60s linear infinite;
-  }
-  
-  #stars::before {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-    opacity: 0.5;
-  }
-  #stars2::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 170%;
-    height: 500%;
-    animation: animStar 60s linear infinite;
-  }
-  #stars2::before {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-    opacity: 0.5;
-  }
-  #stars3::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 170%;
-    height: 500%;
-    animation: animStar 60s linear infinite;
-  }
-  #stars3::before {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-    opacity: 0.5;
-  }
-  #stars4::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 170%;
-    height: 500%;
-    animation: animStar 60s linear infinite;
-  }
-  #stars4::before {
-    background-image: radial-gradient(#ffffff 1px, transparent 1%);
-    background-size: 50px 50px;
-    opacity: 0.5;
-  }
-  
-  @keyframes animStar {
-    from {
-      transform: translateY(0);
-    }
-    
-    to {
-      transform: translateY(-135rem);
-    }
-  }
-  
-  @keyframes animStarRotate {
-    from {
-      transform: rotate(360deg);
-    }
-    
-    to {
-      transform: rotate(0);
-    }
-  }
-  
-  @keyframes gradient_301 {
-    0% {
-      background-position: 0% 50%;
-    }
-    
-    50% {
-      background-position: 100% 50%;
-    }
-    
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-  @keyframes pulse_3011 {
-    0% {
-      transform: scale(0.75);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-    }
-    
-    70% {
-      transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-    
-    100% {
-      transform: scale(0.75);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-  }
-  .button4 {
-    position: relative;
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    transition: filter 250ms;
-    user-select: none;
-    margin: 20px auto 20px auto;
-    touch-action: manipulation;
-  }
-  
-  .shadow4 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: hsl(0deg 0% 0% / 0.25);
-    will-change: transform;
-    transform: translateY(2px);
-    transition: transform
-    600ms
-    cubic-bezier(.3, .7, .4, 1);
-  }
-  
-  .edge {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: linear-gradient(
-    to left,
-    hsl(340deg 100% 16%) 0%,
-    hsl(340deg 100% 32%) 8%,
-    hsl(340deg 100% 32%) 92%,
-    hsl(340deg 100% 16%) 100%
-    );
-  }
-  
-  .front {
-    display: block;
-    position: relative;
-    padding: 12px 27px;
-    border-radius: 12px;
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    background: hsl(345deg 100% 47%);
-    will-change: transform;
-    transform: translateY(-4px);
-    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
-  }
-  
-  .button4:hover {
-    filter: brightness(110%);
-  }
-  
-  .button4:hover .front {
-    transform: translateY(-6px);
-    transition: transform
-    250ms
-    cubic-bezier(.3, .7, .4, 1.5);
-  }
-  
-  .button4:active .front {
-    transform: translateY(-2px);
-    transition: transform 34ms;
-  }
-  
-  .button4:hover .shadow {
-    transform: translateY(4px);
-    transition: transform
-    250ms
-    cubic-bezier(.3, .7, .4, 1.5);
-  }
-  
-  .button4:active .shadow {
-    transform: translateY(1px);
-    transition: transform 34ms;
-  }
-  
-  .button4:focus:not(:focus-visible) {
-    outline: none;
-  }
-  .inputRounds{
-    width: 80%;
-    border: 1px solid grey;
-    border-radius: 5px;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    color: black;
-    font-size: 16px;
-    font-weight: 600;
-    height: 38px;
-  }
+}
+@media screen and (max-width:1200px){
   .card-results{
     width: 20%;
-    border: 1px solid grey;
-    border-radius: 5px;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-    color: black;
-    font-size: 16px;
-    font-weight: 600;
-    min-height: 38px;
-    padding-top: 25px;
-    background-color: #0000004f;
   }
-  .btn-results{
-    min-width: 85px;
-    font-weight: bold;
-    border: 1px solid #000000bf;
-    border-radius: 8px;
-    box-shadow: 1px 4px 5px 0px #000000bf;
-    max-width: 90%;
+}
+@media screen and (max-width:1025px){
+  .card-results{
+    width: 23%;
   }
-  @media screen and (max-width:1320px){
-    .card-results{
-      width: 15%;
-    }
+}
+
+@media screen and (max-width:768px){
+  .card-results{
+    width: 30%;
   }
-  @media screen and (max-width:1200px){
-    .card-results{
-      width: 20%;
-    }
+}   
+@media screen and (max-width:425px){
+  .card-results{
+    width: 60%;
   }
-  @media screen and (max-width:1025px){
-    .card-results{
-      width: 23%;
-    }
+}
+@media screen and (max-width:320px){
+  .card-results{
+    width: 75%;
   }
-  
-  @media screen and (max-width:768px){
-    .card-results{
-      width: 30%;
-    }
-  }   
-  @media screen and (max-width:425px){
-    .card-results{
-      width: 60%;
-    }
-  }
-  @media screen and (max-width:320px){
-    .card-results{
-      width: 75%;
-    }
-  }
-  
-  
-  
+}
+
+
