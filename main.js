@@ -51,7 +51,7 @@ function calcolaPunteggio() {
 
     // Mostra i punteggi per ogni giocatore
     Object.entries(punteggiGiocatori).forEach(([player, score]) => {
-        resultContainer.innerHTML += `<p>${player}: ${score}</p>`;
+        resultContainer.innerHTML += `<p>${player}: ${score},</p>`;
     });
 }
 
