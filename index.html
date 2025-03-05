@@ -502,10 +502,17 @@
                   <input class="inputRounds" type="text" id="round5" placeholder="quinto round" />
               </div>
 
-              <button class="btn2" type="button" id="calculateButton" onclick="calculateFinalScores(rounds)">
-                <strong style="color: white !important">Calcola Classifica</strong>
 
-                </button>
+                <button class="btn2" type="button" id="calculateButton" onclick="calculateFinalScores(rounds)">
+                    <strong>Calcola Classifica</strong>
+                    <div id="container-stars4">
+                      <div id="stars4"></div>
+                    </div>
+                    <div id="glow4">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                      </div>
+                    </button>
           
               <h2>Classifica Finale</h2>
               <ul id="leaderboard"></ul>
