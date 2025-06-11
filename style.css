@@ -18,6 +18,10 @@ body {
   /* background: url(https://images.everyeye.it/img-notizie/among-us-come-giocare-amici-pc-android-iphone-v11-477889.jpg); */
   color: #f8f9fa;
   background-attachment: fixed;
+      background: linear-gradient(45deg, #FF0000 25%, orange 25%, #00b8f0 75%, /* Rosso */ #0d6efd 75% /* Ciano */);
+    color: #fdfcfc;
+    background-size: 200% 100%;
+    animation: colorAnimation 6.5s 2.5s infinite alternate-reverse;
 }
 input{
   font-size: xx-large;
@@ -44,6 +48,9 @@ input{
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 100%; }
 }
+.accordion-button{
+    background-color: #FF0042 !important;
+}
 
 .largeWidth{
   max-width: 2000px !important;
@@ -52,8 +59,6 @@ input{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  
-  
 }
 .btn{
   min-width: 85px;
@@ -73,7 +78,7 @@ input{
   border-radius: 7px;
   border: 2px solid transparent;
   text-shadow: 1px 1px 1px #00000040;
-  box-shadow: 8px 8px 20px 0px #45090059;
+  box-shadow: 3px 4px 4px #4e4c4ca1;
   padding: 10px 15px;
   line-height: 20px;
   cursor: pointer;
@@ -93,7 +98,7 @@ input{
   border-radius: 7px;
   border: 2px solid transparent;
   text-shadow: 1px 1px 1px #00000040;
-  box-shadow: 8px 8px 20px 0px #00244559;
+  box-shadow: 3px 4px 4px #4e4c4ca1;
   padding: 10px 15px;
   line-height: 20px;
   cursor: pointer;
@@ -112,7 +117,7 @@ input{
   border-radius: 7px;
   border: 2px solid transparent;
   text-shadow: 1px 1px 1px #00000040;
-  box-shadow: 8px 8px 20px 0px #00294559;
+  box-shadow: 3px 4px 4px #4e4c4ca1;
   padding: 10px 25px;
   line-height: 20px;
   cursor: pointer;
@@ -153,20 +158,20 @@ input{
 }
 
 .result-container {
-  margin: 20px auto 20px auto;
-  padding: 20px 20px 20px 20px;
-  color: white;
-  font-size: x-large;
-  font-weight: bold;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 30px;
-  background: #e0e0e0;
-  box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
-  padding: 30px 10px;
-  margin: 20px 20px;
+    margin: 20px auto 20px auto;
+    padding: 20px 20px 20px 20px;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 5px 7px 3px #4e4c4ca1;
+    padding: 30px 10px;
+    margin: 20px 20px;
 }
 
 .result-container h4 {
@@ -206,7 +211,7 @@ input{
 
 .form-group {
   transition: border-color 0.7s ease;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
   margin-top: 20px;
 }
 
@@ -243,58 +248,9 @@ input{
 .setDeadHidden {
   display: none;
 }
-.accordion{
-  padding-top:8%;
-}
-.accordionStyle{
-  margin-top: 300px;
-}
-.accordion-layout{
-  margin: 20px auto 20px auto;
-  padding: 20px 20px 20px 20px;
-  color: white;
-  font-size: x-large;
-  font-weight: bold;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 30px !important;
-  background: #e0e0e0 !important;
-  box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
-  padding: 30px 10px;
-  margin: 20px 20px;
-}
-.accordion-flush>.accordion-item>.accordion-header .accordion-button, .accordion-flush>.accordion-item>.accordion-header .accordion-button.collapsed {
-  border-radius: 10px;
-  border: 5px solid transparent !important;
-  background-color: transparent !important;
-}
 label{
   font-size: x-large;
   margin-bottom:20px;
-}
-.accordion-body {
-  
-  color: #ffffff;
-  /* background-color: black; */
-}
-.accordion-header {
-  margin-bottom: 0;
-  background-color: #343A40;
-}
-.accordion-flush>.accordion-item {
-  background-color: transparent !important;
-  backdrop-filter: blur(15px);
-}
-.accordion-item:not(:first-of-type) {
-  background-color: transparent !important;
-  backdrop-filter: blur(15px);
-}
-.accordion-button:not(.collapsed) {
-  color: transparent !important;
-  background-color: #343A40;
-  border: 3px solid transparent !important
 }
 h4{
   color: white;
@@ -311,14 +267,14 @@ h4{
   max-width: 300px;
   border-radius: 30px;
   background: #e0e0e0;
-  box-shadow: 15px 15px 30px #9b9b9b, -15px -15px 30px #ffffff;
+  box-shadow: 5px 7px 3px #4e4c4ca1;
   padding: 30px 10px;
   margin: 20px 20px;
 }
 .card-basis:hover{
-  translate: 0.6s ease-in-out;
-  transform: scale(0.95);
-  box-shadow: rgb(59, 59, 59) 5px 3px 12px, rgb(119 119 119) -5px -3px 4px 0px;
+  translate: 0.4s ease-in-out;
+  transform: scale(0.98);
+box-shadow: 5px 7px 3px #4e4c4ca1;
 }
 
 @media screen and (min-width: 320px) and (max-width: 430px) {
@@ -856,6 +812,21 @@ strong {
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+.frontAccordion {
+  padding: 12px 27px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: hsl(345deg 100% 47%);
+}
+.accordion-item:last-of-type>.accordion-collapse {
+    border-bottom-right-radius: var(--bs-accordion-border-radius);
+    border-bottom-left-radius: var(--bs-accordion-border-radius);
+    background-color: transparent !important;
+}
+div#collaseOne.accordion-collapse .collapse .collapse .show{
+  background-color: transparent !important;
 }
 
 .button4:hover {
